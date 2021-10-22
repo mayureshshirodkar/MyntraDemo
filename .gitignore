@@ -1,0 +1,8 @@
+__MACOSX
+.DS_Store
+**/.idea/**
+**/reports/**
+*.iml
+*.class
+*.html
+workspace.xml
