@@ -9,16 +9,16 @@ public class DriverFactory {
 
     public WebDriver driver;
 
-    public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<>();
+    public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
     public WebDriver initDriver(String browser){
         if (browser.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
-            tdriver.set(new ChromeDriver());
+            tlDriver.set(new ChromeDriver());
         }
 
         else if(browser.equalsIgnoreCase("safari")){
-            tdriver.set(new SafariDriver());
+            tlDriver.set(new SafariDriver());
         }
 
         else{
@@ -30,7 +30,7 @@ public class DriverFactory {
     }
 
     public static synchronized WebDriver getDriver(){
-        return tdriver.get();
+        return tlDriver.get();
     }
 
 }

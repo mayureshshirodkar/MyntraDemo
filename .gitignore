@@ -2,6 +2,7 @@ __MACOSX
 .DS_Store
 **/.idea/**
 **/reports/**
+**/target/**
 *.iml
 *.class
 *.html

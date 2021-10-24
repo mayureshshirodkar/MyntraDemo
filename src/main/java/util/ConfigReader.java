@@ -9,7 +9,7 @@ import java.util.Properties;
 public class ConfigReader {
 
     private static Properties prop;
-    private String configPath = "."+ File.separator +"src" + File.separator + "resources" + File.separator + "config" + File.separator + "config.properties";
+    private String configPath = "."+ File.separator +"src" + File.separator + "test" + File.separator + "resources" + File.separator + "config" + File.separator + "config.properties";
 
     /**
      * This method is used to load the config properties
