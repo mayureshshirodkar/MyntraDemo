@@ -8,10 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"src/test/resources/features"},
-        glue = {"stepdefinitions", "apphooks"},
+        glue = {"stepdefinitions"},
         plugin = {"pretty"}
 )
-public class TestRunner {
-
-
-}
+public class TestRunner { }

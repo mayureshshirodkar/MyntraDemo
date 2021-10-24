@@ -1,8 +1,6 @@
 package util;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -36,9 +34,20 @@ public class ElementUtil {
         return webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
 
+    public List<WebElement> waitForPresenceElements(By locator, int time){
+        webDriverWait = new WebDriverWait(driver, time);
+        return webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+    }
+
 
     public void clickElement(By locator){
         waitForClickableElement(locator).click();
+    }
+
+    public void clickElementByJavaScript(By locator){
+         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+         WebElement element = driver.findElement(locator);
+         javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
     public void sendKeysToElement(By locator, String text){
@@ -48,6 +57,10 @@ public class ElementUtil {
     public void hoverOverElement(By locator){
         actions = new Actions(driver);
         actions.moveToElement(waitForVisibilityElement(locator)).perform();
+    }
+
+    public String getPageTitle(){
+        return driver.getTitle();
     }
 
     public void switchToWindowHandle(String windowTitle){
