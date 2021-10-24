@@ -5,5 +5,4 @@ __MACOSX
 **/target/**
 *.iml
 *.class
-*.html
 workspace.xml

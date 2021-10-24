@@ -56,7 +56,7 @@
         <version>4.4.3</version>
     </dependency>
 
-        
+
     <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber6-adapter -->
     <dependency>
         <groupId>tech.grasshopper</groupId>
