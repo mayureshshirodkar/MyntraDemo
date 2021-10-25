@@ -2,12 +2,14 @@ package stepdefinitions;
 
 import factory.DriverFactory;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import util.ConfigReader;
+import util.Utils;
 
 import java.util.Properties;
 
@@ -23,6 +25,7 @@ public class CommonSteps {
         driverFactory = new DriverFactory();
 
         prop = configReader.getConfig();
+        Utils.deleteFolder("report");
         driver = driverFactory.initDriver(prop.getProperty("browser"));
     }
 

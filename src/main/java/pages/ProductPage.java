@@ -18,6 +18,7 @@ public class ProductPage {
     By sizeButtons = By.xpath("//div[@class='size-buttons-tipAndBtnContainer']//p");
     By addToBagButton = By.xpath("//div[text()='ADD TO BAG']");
     By pinCodeBox = By.xpath("//div[contains(@class, 'Address-address-box')]/input");
+    By pinCodeChangeButton = By.xpath("//span[contains(@class, 'Address-address-button')]");
     By pinCodeCheckButton = By.xpath("//div[contains(@class, 'Address-address-box')]/button");
     By pinCodeDeliveryDate = By.xpath("(//ul/li//h4)[1]");
     By pinCodeDeliveryPayment = By.xpath("(//ul/li//h4)[2]");
@@ -51,6 +52,9 @@ public class ProductPage {
     }
 
     public void checkPinCodeAvailable(String pincode){
+        if(elementUtil.waitForVisibilityElement(pinCodeChangeButton) != null)
+            elementUtil.waitForVisibilityElement(pinCodeChangeButton).click();
+
         elementUtil.sendKeysToElement(pinCodeBox, pincode);
         elementUtil.clickElement(pinCodeCheckButton);
     }

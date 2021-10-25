@@ -20,8 +20,15 @@ public class ElementUtil {
 
 
     public WebElement waitForVisibilityElement(By locator){
-        webDriverWait = new WebDriverWait(driver, 5);
-        return webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        WebElement webElement = null;
+        try{
+         webDriverWait = new WebDriverWait(driver, 5);
+         webElement = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return webElement;
     }
 
     public WebElement waitForClickableElement(By locator){

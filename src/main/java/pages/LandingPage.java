@@ -16,6 +16,7 @@ public class LandingPage {
     By bag = By.xpath("//a[@href='/checkout/cart']");
     By wishlist = By.xpath("//a[@href='/wishlist']");
     By login = By.xpath("//a[text() = 'login / Signup']");
+    By welcomeText = By.xpath("//a[@href='/my/profile']/div[@class='desktop-infoTitle']");
     By searchQuery = By.xpath("//div[@class='desktop-query']/input");
     By suggestionDropdownOptions = By.xpath("//ul/li[contains(@class, 'desktop-suggestion')]");
 
@@ -35,6 +36,10 @@ public class LandingPage {
 
     public String getTitle(){
         return elementUtil.getPageTitle();
+    }
+
+    public String getWelcomeText(){
+        return elementUtil.waitForVisibilityElement(welcomeText).getText();
     }
 
     public void enterSearchQuery(String searchText){

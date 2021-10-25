@@ -3,7 +3,7 @@ Feature: Shopping Cart Experience
   Scenario: SETUP APPLICATION
     Given   browser loads the web app
 
-  Scenario: USER NAVIGATES TO APPLICATION LANDING PAGE - VERIFY THAT USER LANDS ON
+  Scenario: USER NAVIGATES TO APPLICATION LANDING PAGE - VERIFY THAT USER LANDS ON MMYNTRA HOME PAGE
     Given   user is on landing page
     Then    page title should be "Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra"
 
@@ -26,3 +26,9 @@ Feature: Shopping Cart Experience
 
   Scenario: TEARDOWN APPLICATION
     Given   application teardown
+
+
+#  Scenario: USER LOGS IN TO APPLICATION - VERIFY THAT USER HAS SUCCESSFULLY LOGGED IN
+#    Given   user is on landing page
+#    When    user logs in with his credentials
+#    Then    user has successfully logged in
