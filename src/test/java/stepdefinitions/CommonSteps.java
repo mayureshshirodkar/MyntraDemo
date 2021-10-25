@@ -21,11 +21,11 @@ public class CommonSteps {
 
     @Given("browser loads the web app")
     public void browserLoadsTheWebApp() {
+        Utils.deleteFolder("report");
         configReader = new ConfigReader();
         driverFactory = new DriverFactory();
 
         prop = configReader.getConfig();
-        Utils.deleteFolder("report");
         driver = driverFactory.initDriver(prop.getProperty("browser"));
     }
 

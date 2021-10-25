@@ -27,7 +27,7 @@ Feature: Shopping Cart Experience
   Scenario: TEARDOWN APPLICATION
     Given   application teardown
 
-
+## Myntra Account gets blocked on trying to login with password instead of OTP ##
 #  Scenario: USER LOGS IN TO APPLICATION - VERIFY THAT USER HAS SUCCESSFULLY LOGGED IN
 #    Given   user is on landing page
 #    When    user logs in with his credentials
